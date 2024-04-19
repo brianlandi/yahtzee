@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IBM+Plex+Mono&family=Poppins:wght@400;600&display=swap");
+
+$color-green: #3a6c29;
+$color-beige: #efeade;
+$color-gray-dark: #60605f;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: $color-gray-dark;
+  font-family: "EB Garamond", serif;
 }
 
 .logo {
@@ -41,20 +49,53 @@
   color: #888;
 }
 
-.dieContainer {
+.dieContainerInner {
   display: flex;
 }
 
 .die {
   padding: 2rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $color-green;
   &.hold {
-    border: 1px solid blue;
+    border: 1px solid $color-beige;
+    border-radius: 10px;
   }
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scoreable {
-  border: 1px solid hotpink;
+  border: 1px solid darkred;
+  border-radius: 6px;
   cursor: pointer;
+}
+
+.scoreboard {
+  background-color: $color-green;
+  color: $color-gray-dark;
+  border-radius: 20px;
+  padding: 2rem 4rem 4rem 4rem;
+  table {
+    width: 80%;
+    margin: 0px auto;
+    background-color: $color-beige;
+    padding: 2rem;
+    border-radius: 10px;
+    &:nth-child(2) {
+      margin-top: 2rem;
+    }
+    tr {
+      margin-bottom: 1rem;
+    }
+  }
+  .playerTotals {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
 }
 
 .scored {
@@ -62,5 +103,32 @@
 }
 
 .highlight {
-  color: hotpink;
+  color: $color-green;
+}
+
+button {
+  background-color: $color-beige;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  border: 2px solid $color-gray-dark;
+  cursor: pointer;
+  color: $color-green;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.dieContainer {
+  background-color: $color-green;
+  border-radius: 20px;
+  padding: 2rem 2rem 0 2rem;
 }

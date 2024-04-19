@@ -132,8 +132,21 @@ const ScoreBoard = ({
   };
 
   return (
-    <div>
-      <h3>ScoreBoard</h3>
+    <div className='scoreboard'>
+      <table className='playerTotals'>
+        <thead>
+          <tr>
+            <td>Player 1 Total</td>
+            <td>Player 2 Total</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{playerOneScore.reduce((acc, score) => acc + score, 0)}</td>
+            <td>{playerTwoScore.reduce((acc, score) => acc + score, 0)}</td>
+          </tr>
+        </tbody>
+      </table>
       <table>
         <thead>
           <tr>
@@ -196,20 +209,6 @@ const ScoreBoard = ({
               </tr>
             );
           })}
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <td>Player 1 Total</td>
-            <td>Player 2 Total</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{playerOneScore.reduce((acc, score) => acc + score, 0)}</td>
-            <td>{playerTwoScore.reduce((acc, score) => acc + score, 0)}</td>
-          </tr>
         </tbody>
       </table>
     </div>

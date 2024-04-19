@@ -108,27 +108,32 @@ function App() {
 
   return (
     <>
-      <button onClick={resetGameState}>New Game</button>
-      <h3>Player Turn: {gameState.currentPlayer}</h3>
+      {/* <h3>Player Turn: {gameState.currentPlayer}</h3>
       <h3>Rolls Remaining: {gameState.rollsRemaining}</h3>
-      <h3>Rounds Left: {gameState.turnsLeft}</h3>
+    <h3>Rounds Left: {gameState.turnsLeft}</h3> */}
       <div className='dieContainer'>
-        {roll.map((die, index) => {
-          return (
-            <Die
-              key={index}
-              index={index}
-              roll={die[0]}
-              toggleRollable={toggleRollable}
-              updateScore={updateScore}
-              playerTurn={gameState.currentPlayer}
-            />
-          );
-        })}
+        <button className='newGameButton' onClick={resetGameState}>
+          New Game
+        </button>
+        <div className='dieContainerInner'>
+          {roll.map((die, index) => {
+            return (
+              <Die
+                key={index}
+                index={index}
+                roll={die[0]}
+                toggleRollable={toggleRollable}
+                updateScore={updateScore}
+                playerTurn={gameState.currentPlayer}
+                rollsRemaining={gameState.rollsRemaining}
+              />
+            );
+          })}
+        </div>
+        <button onClick={handleRoll} disabled={gameState.rollsRemaining === 0}>
+          Roll
+        </button>
       </div>
-      <button onClick={handleRoll} disabled={gameState.rollsRemaining === 0}>
-        Roll
-      </button>
       <ScoreBoard
         playerOneScore={gameState.player1}
         playerTwoScore={gameState.player2}
