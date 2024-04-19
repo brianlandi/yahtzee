@@ -5,3 +5,7 @@ This a yahtzee game project that is currently a work in progress. If you'd like 
 Might have some plans in the future to build a computer opponent either scripted or even AI.
 
 To run the application on your machine clone the repo, install node modules and run `npm run dev`.
+
+## License
+
+MIT License &copy; Brian Landi
